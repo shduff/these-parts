@@ -4,22 +4,12 @@
 home—found while wandering, recommended by friends, or waiting for another
 look.
 
-This repository contains the first local draft: a title-free collage landing
-page, a searchable and filterable index, and a shareable detail page for each
-place.
+The site includes a title-free collage landing page, a searchable and
+filterable index, and a shareable detail page for each place.
 
-## Current collection
-
-- Ether Dome
-- Mapparium
-- Boston Athenaeum
-- Old South Church
-- All Saints Way
-- Metropolitan Waterworks Museum
-
-The six approved place illustrations are collected in
-[`public/art/places`](public/art/places). Early image explorations are kept
-locally but intentionally excluded from this repository.
+- Live: [shaunalynn.org/these-parts](http://shaunalynn.org/these-parts/)
+- Repository: [github.com/shduff/these-parts](https://github.com/shduff/these-parts)
+- Current collection: 27 places
 
 ## Run locally
 
@@ -33,35 +23,33 @@ npm run dev
 Then open the local address printed in the terminal, normally
 [http://localhost:5173](http://localhost:5173).
 
-## Build
+## Build and publish
 
 ```bash
 npm run build
 ```
 
-The production-ready static files are written to `dist/`. The Vite build uses
-relative asset paths so it can later be hosted from a GitHub Pages repository
-subpath.
+The production files are written to `dist/`. Pushing `main` runs
+`.github/workflows/deploy-pages.yml` and publishes the build to GitHub Pages.
 
-## Editing places
+## Editing
 
-The current entries live in [`src/place-data.ts`](src/place-data.ts). Each place
-has:
+Places live in [`src/place-data.ts`](src/place-data.ts). Each place has a name,
+What, Where, Why, Been/Next status, optional Via attribution, slug, map link,
+and approved image.
 
-- `name`
-- `what`
-- `where` information (`area`, `address`, and `googleMapsUrl`)
-- `why`
-- `status` (`Been` or `Next`)
-- `via`
-- a unique `slug` and approved image
+Artwork lives in [`public/art/places`](public/art/places).
 
-See [`docs/PROJECT_JOURNAL.md`](docs/PROJECT_JOURNAL.md) for the product
-specification and [`docs/STYLE_GUIDE.md`](docs/STYLE_GUIDE.md) for the visual
-and writing system.
+## Project handoff
 
-## Publishing
+Start with [`docs/CURRENT_STATUS.md`](docs/CURRENT_STATUS.md) for a concise
+answer to “where are we?” and “where can we pick up?”
 
-The intended host is GitHub Pages. Publishing is deliberately separate from
-the local build and repository creation so deployment settings can be chosen
-explicitly.
+- [`docs/PROJECT_JOURNAL.md`](docs/PROJECT_JOURNAL.md): purpose, product model,
+  and decision history
+- [`docs/STYLE_GUIDE.md`](docs/STYLE_GUIDE.md): visual, image, interface, and
+  writing system
+- [`docs/NEW_PLACES.md`](docs/NEW_PLACES.md): expansion decisions and held
+  discoveries
+- [`docs/MEDIA_STORAGE.md`](docs/MEDIA_STORAGE.md): current and longer-term
+  image-storage plan

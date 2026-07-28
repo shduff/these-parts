@@ -26,7 +26,12 @@ function PlaceCard({ place, index }: { place: Place; index: number }) {
     <article className="place-card">
       <a className="place-card__link" href={`#/place/${place.slug}`}>
         <div className="place-card__image">
-          <img src={place.image} alt={`Cut-paper portrait of ${place.name}`} />
+          <img
+            src={place.image}
+            alt={`Cut-paper portrait of ${place.name}`}
+            loading={index < 2 ? "eager" : "lazy"}
+            decoding="async"
+          />
         </div>
         <div className="place-card__content">
           <div className="place-card__meta">
@@ -40,7 +45,7 @@ function PlaceCard({ place, index }: { place: Place; index: number }) {
             <p>{place.what}</p>
           </div>
           <div className="place-card__foot">
-            <span>Via {place.via}</span>
+            <span>{place.via ? `Via ${place.via}` : "Found close to home"}</span>
             <span aria-hidden="true">Enter ↗</span>
           </div>
         </div>
@@ -60,7 +65,16 @@ function HomePage() {
     [],
   );
   const sources = useMemo(
-    () => [ALL, ...Array.from(new Set(places.map((place) => place.via)))],
+    () => [
+      ALL,
+      ...Array.from(
+        new Set(
+          places
+            .map((place) => place.via)
+            .filter((source): source is string => Boolean(source)),
+        ),
+      ),
+    ],
     [],
   );
 
@@ -76,7 +90,7 @@ function HomePage() {
           place.why,
           place.area,
           place.address,
-          place.via,
+          place.via ?? "",
         ].some((value) => value.toLowerCase().includes(normalized));
 
       return (
@@ -108,6 +122,7 @@ function HomePage() {
             src="./art/these-parts-hero.png"
             alt=""
             aria-hidden="true"
+            fetchPriority="high"
           />
           <div className="hero__title">
             <p className="kicker">A collection of what’s here, actually</p>
@@ -248,7 +263,8 @@ function PlacePage({ place }: { place: Place }) {
 
         <header className="detail__heading">
           <p className="detail__number">
-            {place.status} · Via {place.via}
+            {place.status}
+            {place.via ? ` · Via ${place.via}` : ""}
           </p>
           <h1>{place.name}</h1>
         </header>

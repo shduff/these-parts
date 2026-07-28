@@ -190,9 +190,9 @@ The homepage splash is different from a place image:
 - enough open space for live page typography;
 - more playful and atmospheric than informational.
 
-## Approved image manifest
+## Image manifest
 
-Only these six place images define the approved place-art system:
+The foundational six define the place-art system:
 
 | Place | File | Composition |
 |---|---|---|
@@ -209,6 +209,36 @@ Landing art:
 
 Earlier experiments are not style references and are intentionally excluded
 from the public repository.
+
+The July 2026 expansion applies the same system with a deliberately varied
+layout rhythm:
+
+| Place | File | Composition |
+|---|---|---|
+| McGrath Highway Overpass | `mcgrath-highway-overpass.png` | Contained |
+| Sherman Court | `sherman-court.png` | Open field |
+| Forest Hills Cemetery | `forest-hills-cemetery.png` | Contained |
+| Alewife Extension | `alewife-extension.png` | Contained |
+| Alewife Brook Path | `alewife-brook-path.png` | Open field |
+| Mount Misery | `mount-misery.png` | Open field |
+| Ponyhenge | `ponyhenge.png` | Open field |
+| deCordova Sculpture Park | `decordova-sculpture-park.png` | Contained |
+| Harvard Museum of Natural History | `harvard-museum-natural-history.png` | Open field |
+| Miniature City | `miniature-city.png` | Contained |
+| Grolier Poetry Book Shop | `grolier-poetry-book-shop.png` | Open field |
+| Sofra | `sofra.png` | Open field |
+| Mount Auburn Cemetery | `mount-auburn-cemetery.png` | Contained |
+| Cambridge Antique Market | `cambridge-antique-market.png` | Open field |
+| Lehrhaus | `lehrhaus.png` | Open field |
+| Buffalo Exchange — Somerville | `buffalo-exchange-somerville.png` | Open field |
+| Lucy Parsons Center | `lucy-parsons-center.png` | Contained |
+| Level99 | `level99.png` | Open field |
+| Red Fox Escapes | `red-fox-escapes.png` | Contained |
+| Free Play — Providence | `free-play.png` | Open field |
+| Free Play — Worcester | `free-play-worcester.png` | Contained |
+
+This expansion is intentionally near-even rather than mechanically alternating:
+ten contained compositions and eleven open fields.
 
 ## Interface language
 
@@ -312,3 +342,10 @@ When adding a place:
 6. Include the red thread.
 7. Add the exact place title and no other text.
 8. Check spelling and visual consistency before adding the asset.
+
+### Asset-production rule
+
+Keep the best full-resolution generated file as a master. The site should use a
+compressed web derivative with the same crop and color character. Do not
+repeatedly recompress a web derivative. The longer-term storage workflow is
+documented in `docs/MEDIA_STORAGE.md`.
