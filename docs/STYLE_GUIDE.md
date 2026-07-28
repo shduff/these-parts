@@ -292,7 +292,8 @@ Do not invent an attribution when the source is unknown.
 
 ### Cards
 
-- Two-column desktop grid; one column on small screens.
+- Three-column grid on laptop and desktop screens.
+- Two columns below 1080px; one column on phones.
 - Artwork uses a 3:2 ratio.
 - Strong rectangular borders and offset flat-color shadows.
 - Show Status, Area, What, and Via.

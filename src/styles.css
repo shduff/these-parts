@@ -243,8 +243,8 @@ select:focus {
 
 .place-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 3rem 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.6rem 1.5rem;
 }
 
 .place-card {
@@ -296,9 +296,9 @@ select:focus {
 
 .place-card__content {
   display: flex;
-  min-height: 21rem;
+  min-height: 20rem;
   flex-direction: column;
-  padding: 1.4rem;
+  padding: 1.25rem;
 }
 
 .place-card__meta {
@@ -317,7 +317,7 @@ select:focus {
 h3 {
   margin-top: 0.65rem;
   color: var(--cobalt);
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-size: clamp(2.1rem, 2.7vw, 3rem);
   letter-spacing: -0.045em;
   line-height: 0.95;
 }
@@ -494,6 +494,12 @@ h3 {
 .detail__next a:hover {
   color: var(--cream);
   background: var(--green);
+}
+
+@media (max-width: 1080px) {
+  .place-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 900px) {
