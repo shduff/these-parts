@@ -258,9 +258,6 @@ select:focus {
   border: 2px solid var(--ink);
   box-shadow: 0.7rem 0.7rem 0 var(--navy);
   text-decoration: none;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
 }
 
 .place-card:nth-child(3n + 2) .place-card__link {
@@ -269,11 +266,6 @@ select:focus {
 
 .place-card:nth-child(3n) .place-card__link {
   box-shadow: 0.7rem 0.7rem 0 var(--mustard);
-}
-
-.place-card__link:hover {
-  transform: translate(-0.2rem, -0.2rem);
-  box-shadow: 1rem 1rem 0 var(--green);
 }
 
 .place-card__image {
@@ -290,7 +282,7 @@ select:focus {
   transition: transform 350ms ease;
 }
 
-.place-card__link:hover img {
+.place-card__link:is(:hover, :focus-visible) img {
   transform: scale(1.018);
 }
 
@@ -301,22 +293,27 @@ select:focus {
   padding: 1.25rem;
 }
 
+.place-card__content,
+.place-card__content * {
+  transition: color 220ms ease;
+}
+
 .place-card__meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  color: var(--green);
+  color: #66736a;
 }
 
 .place-card__meta span + span::before {
   margin-right: 0.7rem;
-  color: var(--red);
+  color: #ad675f;
   content: "•";
 }
 
 h3 {
   margin-top: 0.65rem;
-  color: var(--cobalt);
+  color: #52668f;
   font-size: clamp(2.1rem, 2.7vw, 3rem);
   letter-spacing: -0.045em;
   line-height: 0.95;
@@ -331,9 +328,13 @@ h3 {
   color: var(--red);
 }
 
+.place-card .field-label {
+  color: #ad675f;
+}
+
 .card-copy > p:last-child {
   margin: 0;
-  color: #3e4957;
+  color: #59616b;
   line-height: 1.6;
 }
 
@@ -347,6 +348,23 @@ h3 {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.place-card__link:is(:hover, :focus-visible) .place-card__meta {
+  color: var(--green);
+}
+
+.place-card__link:is(:hover, :focus-visible) .place-card__meta span + span::before,
+.place-card__link:is(:hover, :focus-visible) .field-label {
+  color: var(--red);
+}
+
+.place-card__link:is(:hover, :focus-visible) h3 {
+  color: var(--cobalt);
+}
+
+.place-card__link:is(:hover, :focus-visible) .card-copy > p:last-child {
+  color: var(--ink);
 }
 
 .empty {
@@ -404,7 +422,7 @@ h3 {
   margin: 0;
   background: var(--navy);
   border: 2px solid var(--ink);
-  box-shadow: 1rem 1rem 0 var(--red);
+  box-shadow: 0 0 0 0.75rem var(--red);
 }
 
 .detail__art img {
@@ -602,7 +620,7 @@ h3 {
   }
 
   .detail__art {
-    box-shadow: 0.5rem 0.5rem 0 var(--red);
+    box-shadow: 0 0 0 0.45rem var(--red);
   }
 
   .detail__heading {

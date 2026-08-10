@@ -296,12 +296,17 @@ Do not invent an attribution when the source is unknown.
 - Two columns below 1080px; one column on phones.
 - Artwork uses a 3:2 ratio.
 - Strong rectangular borders and offset flat-color shadows.
+- Card frames and colored shadows remain fixed on hover.
+- Hover may gently enlarge the image inside its crop and bring muted text
+  colors up to the full brand palette.
 - Show Status, Area, What, and Via.
 - The entire card is a link.
 
 ### Detail pages
 
 - Place image appears large near the top.
+- The vermilion block sits evenly behind the image, reading as a centered
+  paper border rather than a directional drop shadow.
 - Place name remains live text even though it appears in the artwork.
 - What / Where / Why form the main rhythm.
 - Share action copies the unique URL.

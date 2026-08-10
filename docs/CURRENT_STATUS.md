@@ -1,6 +1,6 @@
 # These Parts — Current Status
 
-Last updated: July 27, 2026
+Last updated: August 10, 2026
 
 ## Where things stand
 
@@ -49,6 +49,7 @@ Worcester arcade is titled Free Play — Worcester.
 - Visual and writing rules: `docs/STYLE_GUIDE.md`
 - Expansion intake and held discoveries: `docs/NEW_PLACES.md`
 - Media plan: `docs/MEDIA_STORAGE.md`
+- Content-model proposal and entry-by-entry ledger: `docs/CONTENT_REVIEW.md`
 
 ## Remaining questions
 
@@ -60,6 +61,8 @@ Worcester arcade is titled Free Play — Worcester.
    content form/CMS.
 6. Resolve the custom-domain HTTPS certificate mismatch if the site should use
    HTTPS at `shaunalynn.org`.
+7. Approve or revise the proposed entry structure before migrating the 27
+   records.
 
 ## Media decision
 
