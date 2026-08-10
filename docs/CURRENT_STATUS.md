@@ -63,6 +63,17 @@ Worcester arcade is titled Free Play — Worcester.
 7. Approve or revise the proposed entry structure before migrating the 27
    records.
 
+## Geographic proximity todo
+
+- Add reliable coordinates to the location model.
+- Replace the current arbitrary three-item related list with the geographically
+  nearest places.
+- Decide whether related links should show approximate distance, neighborhood,
+  or walking/transit context.
+- Use proximity more generally in browsing and filtering, while keeping the
+  site useful without requiring a visitor's live location.
+- Consider a future map view only after the underlying location data is clean.
+
 ## Media decision
 
 Keep approved site images in the repo for now. Do not add a paid service yet.

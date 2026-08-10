@@ -73,6 +73,10 @@ Review one entry at a time in site order. For each entry:
 4. Draft the revised record.
 5. Get explicit approval before marking it complete.
 
+During review, confirm enough location information to support future
+distance-based recommendations. Coordinates should be added systematically
+rather than inferred inconsistently from freeform area labels.
+
 ## Ledger
 
 | # | Place | Review status |
