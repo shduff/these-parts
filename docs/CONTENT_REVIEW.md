@@ -22,7 +22,7 @@ Why, not as municipal asset management software.
 type Place = {
   slug: string;
   name: string;
-  status: "Been" | "Next";
+  beenThere: "Done that." | "Not yet.";
 
   what: string;
   why: string;
@@ -35,7 +35,6 @@ type Place = {
     mapUrl: string;
   };
 
-  via?: string;
   officialUrl?: string;
 
   image: {
@@ -43,10 +42,7 @@ type Place = {
     alt: string;
   };
 
-  updated: {
-    date: string;
-    by: string;
-  };
+  updatedDate: string;
 };
 ```
 
@@ -60,14 +56,12 @@ type Place = {
   rules, seasonal access, reservations, or “duck in briefly” guidance.
 - **Where:** area is the human-facing neighborhood or corridor; city is the
   normalized value used for filtering; address and map URL handle navigation.
-- **Via:** the concise public attribution only. Private backstory does not need
-  to be crammed into this field.
 - **Official URL:** optional but preferable for hours and changing visitor
   information.
 - **Image alt:** describes the artwork’s meaningful subject rather than merely
   repeating “cut-paper portrait of [name].”
-- **Updated:** internal maintenance metadata. It need not appear prominently on
-  the public page.
+- **Updated date:** internal maintenance metadata. It need not appear
+  prominently on the public page.
 
 ## Review method
 
@@ -115,19 +109,16 @@ Review one entry at a time in site order. For each entry:
 
 Current record:
 
-- **Status:** Next
+- **Been there?:** Not yet.
 - **What:** A preserved nineteenth-century surgical amphitheater at
   Massachusetts General Hospital, where the first public demonstration of
   surgical anesthesia took place.
 - **Why:** An intact little room where the world quietly changed. It feels
   theatrical, eerie, and unexpectedly intimate.
 - **Where:** Beacon Hill; 55 Fruit Street, Boston
-- **Via:** Atlas chat
 
 Questions for review:
 
-1. Is **Next** still accurate?
-2. Is “Atlas chat” a public attribution you want to keep, or was that merely
-   how it entered this draft?
-3. The current Why was inferred rather than written from your experience. What
+1. Is **Not yet.** still accurate?
+2. The current Why was inferred rather than written from your experience. What
    specifically makes you want to go?

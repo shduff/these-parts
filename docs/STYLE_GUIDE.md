@@ -247,13 +247,12 @@ Preferred labels:
 - **Index**
 - **Find**
 - **Area**
-- **Status**
-- **Via**
+- **Been there?**
 - **What**
 - **Where**
 - **Why**
-- **Been**
-- **Next**
+- **Done that.**
+- **Not yet.**
 - **Map**
 - **Share this place**
 
@@ -278,16 +277,6 @@ Start literal. Explain what someone will encounter.
 
 Be personal. Explain the attraction, memory, surprise, or desire.
 
-### Via
-
-Keep attribution compact:
-
-- `Via Maya`
-- `Via a friend`
-- `Via walking by`
-
-Do not invent an attribution when the source is unknown.
-
 ## Layout and components
 
 ### Cards
@@ -299,7 +288,7 @@ Do not invent an attribution when the source is unknown.
 - Card frames and colored shadows remain fixed on hover.
 - Hover may gently enlarge the image inside its crop and bring muted text
   colors up to the full brand palette.
-- Show Status, Area, What, and Via.
+- Show Been there?, Area, and the literal description without a `What` label.
 - The entire card is a link.
 
 ### Detail pages

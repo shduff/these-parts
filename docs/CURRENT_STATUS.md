@@ -18,8 +18,8 @@ shareable detail page for every place.
 ## Current collection
 
 - **27 total places**
-- **21 Been**
-- **6 Next**
+- **21 Done that.**
+- **6 Not yet.**
 - **21 new images** added in the July 2026 expansion
 - **6 foundational images** retained exactly as the original visual references
 
@@ -29,13 +29,12 @@ Worcester arcade is titled Free Play — Worcester.
 
 ## What works
 
-- Text search across name, descriptions, location, address, and attribution.
-- Area, Status, and Via filters.
+- Text search across name, descriptions, location, and address.
+- Area and Been there? filters.
 - Responsive card grid.
 - Hash-based detail URLs that work on GitHub Pages.
 - Share button for each place.
 - Google Maps links.
-- Optional Via values; missing attribution does not display fake copy.
 - Mixed cut-paper image system: contained illustrations and open-field
   compositions, all connected by the red thread.
 
@@ -78,6 +77,6 @@ Ask Codex:
 > Read `docs/CURRENT_STATUS.md`, `docs/PROJECT_JOURNAL.md`, and
 > `docs/STYLE_GUIDE.md`, then help me continue These Parts.
 
-For a new place, provide: name, What, Why, Been/Next, Via if any, area,
+For a new place, provide: name, What, Why, Done that/Not yet, area,
 address/map link if known, and any image detail that makes the place
 recognizable.

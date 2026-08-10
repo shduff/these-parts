@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { places, type Place, type VisitStatus } from "./place-data";
+import { places, type BeenThere, type Place } from "./place-data";
 
 const ALL = "All";
 
@@ -36,16 +36,14 @@ function PlaceCard({ place, index }: { place: Place; index: number }) {
         <div className="place-card__content">
           <div className="place-card__meta">
             <span>{String(index + 1).padStart(2, "0")}</span>
-            <span>{place.status}</span>
+            <span>{place.beenThere}</span>
             <span>{place.area}</span>
           </div>
           <h3>{place.name}</h3>
           <div className="card-copy">
-            <p className="field-label">What</p>
             <p>{place.what}</p>
           </div>
           <div className="place-card__foot">
-            <span>{place.via ? `Via ${place.via}` : "Found close to home"}</span>
             <span aria-hidden="true">Enter ↗</span>
           </div>
         </div>
@@ -57,27 +55,12 @@ function PlaceCard({ place, index }: { place: Place; index: number }) {
 function HomePage() {
   const [query, setQuery] = useState("");
   const [area, setArea] = useState(ALL);
-  const [status, setStatus] = useState<VisitStatus | typeof ALL>(ALL);
-  const [via, setVia] = useState(ALL);
+  const [beenThere, setBeenThere] = useState<BeenThere | null>(null);
 
   const areas = useMemo(
     () => [ALL, ...Array.from(new Set(places.map((place) => place.area)))],
     [],
   );
-  const sources = useMemo(
-    () => [
-      ALL,
-      ...Array.from(
-        new Set(
-          places
-            .map((place) => place.via)
-            .filter((source): source is string => Boolean(source)),
-        ),
-      ),
-    ],
-    [],
-  );
-
   const visiblePlaces = useMemo(() => {
     const normalized = query.trim().toLowerCase();
 
@@ -90,26 +73,22 @@ function HomePage() {
           place.why,
           place.area,
           place.address,
-          place.via ?? "",
         ].some((value) => value.toLowerCase().includes(normalized));
 
       return (
         matchesSearch &&
         (area === ALL || place.area === area) &&
-        (status === ALL || place.status === status) &&
-        (via === ALL || place.via === via)
+        (beenThere === null || place.beenThere === beenThere)
       );
     });
-  }, [area, query, status, via]);
+  }, [area, beenThere, query]);
 
-  const hasFilters =
-    query !== "" || area !== ALL || status !== ALL || via !== ALL;
+  const hasFilters = query !== "" || area !== ALL || beenThere !== null;
 
   function clearFilters() {
     setQuery("");
     setArea(ALL);
-    setStatus(ALL);
-    setVia(ALL);
+    setBeenThere(null);
   }
 
   return (
@@ -125,15 +104,14 @@ function HomePage() {
             fetchPriority="high"
           />
           <div className="hero__title">
-            <p className="kicker">A collection of what’s here, actually</p>
+            <p className="kicker">Other worlds, same bus line</p>
             <h1>
               These
               <br />
               Parts
             </h1>
             <p className="hero__intro">
-              Places worth noticing close to home—found while wandering,
-              recommended by friends, or waiting for another look.
+              A guide to getting lost without leaving these parts.
             </p>
           </div>
           <a className="hero__jump" href="#places">
@@ -145,7 +123,7 @@ function HomePage() {
           <div className="index-heading">
             <div>
               <p className="kicker">The index</p>
-              <h2 id="places-heading">Places, so far</h2>
+              <h2 id="places-heading">Where to next?</h2>
             </div>
             <p className="count" aria-live="polite">
               {visiblePlaces.length} of {places.length}
@@ -159,7 +137,7 @@ function HomePage() {
                 type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="A place, feeling, or neighborhood"
+                placeholder="Search these parts"
               />
             </label>
             <label>
@@ -175,32 +153,25 @@ function HomePage() {
                 ))}
               </select>
             </label>
-            <label>
-              <span>Status</span>
-              <select
-                value={status}
-                onChange={(event) =>
-                  setStatus(event.target.value as VisitStatus | typeof ALL)
-                }
-              >
-                <option value={ALL}>Been + next</option>
-                <option value="Been">Been</option>
-                <option value="Next">Next</option>
-              </select>
-            </label>
-            <label>
-              <span>Via</span>
-              <select
-                value={via}
-                onChange={(event) => setVia(event.target.value)}
-              >
-                {sources.map((option) => (
-                  <option key={option} value={option}>
-                    {option === ALL ? "Everyone" : option}
-                  </option>
+            <fieldset className="been-there-filter">
+              <legend>Been there?</legend>
+              <div>
+                {(["Done that.", "Not yet."] as BeenThere[]).map((option) => (
+                  <button
+                    key={option}
+                    type="button"
+                    aria-pressed={beenThere === option}
+                    onClick={() =>
+                      setBeenThere((current) =>
+                        current === option ? null : option,
+                      )
+                    }
+                  >
+                    {option}
+                  </button>
                 ))}
-              </select>
-            </label>
+              </div>
+            </fieldset>
             {hasFilters && (
               <button type="button" className="clear" onClick={clearFilters}>
                 Clear
@@ -226,7 +197,7 @@ function HomePage() {
       </main>
       <footer className="site-footer">
         <p>These Parts</p>
-        <p>Look again. It was here all along.</p>
+        <p>Take the long way home.</p>
       </footer>
     </>
   );
@@ -263,8 +234,7 @@ function PlacePage({ place }: { place: Place }) {
 
         <header className="detail__heading">
           <p className="detail__number">
-            {place.status}
-            {place.via ? ` · Via ${place.via}` : ""}
+            {place.beenThere}
           </p>
           <h1>{place.name}</h1>
         </header>

@@ -46,12 +46,11 @@ Why it works:
 
 Current landing line:
 
-> A collection of what’s here, actually.
+> Other worlds, same bus line.
 
 Current supporting sentence:
 
-> Places worth noticing close to home—found while wandering, recommended by
-> friends, or waiting for another look.
+> A guide to getting lost without leaving these parts.
 
 “Here, actually” remains useful as an attitude or supporting phrase, not the
 primary brand name.
@@ -87,15 +86,10 @@ Area or neighborhood, street address, and a Google Maps link.
 
 The personal description: why the maker loves the place or wants to go there.
 
-### Status
+### Been there?
 
-- **Been**
-- **Next**
-
-### Via
-
-The person, publication, walk, conversation, or other source that led to the
-place.
+- **Done that.**
+- **Not yet.**
 
 ### Updated
 
@@ -116,11 +110,10 @@ fields in the first version.
 
 ### Place index
 
-- Text search across name, What, Why, area, address, and Via.
+- Text search across name, What, Why, area, and address.
 - Filters for:
   - Area
-  - Status
-  - Via
+  - Been there?
 - A visible result count.
 - Twenty-seven image-led cards.
 - Each card links to its own detail page.
@@ -133,7 +126,7 @@ fields in the first version.
   - etc.
 - Large approved illustration near the top.
 - What / Where / Why sections.
-- Status and Via.
+- Been there? status.
 - Google Maps link.
 - “Share this place” button that copies the current URL.
 - Links to other places in the collection.
@@ -158,8 +151,8 @@ including held and excluded places, is in `docs/NEW_PLACES.md`.
 
 Current status totals:
 
-- **Been:** 21
-- **Next:** 6
+- **Done that.:** 21
+- **Not yet.:** 6
 
 ## Current technical shape
 
@@ -185,7 +178,6 @@ masters should eventually move to object storage. See `docs/MEDIA_STORAGE.md`.
 
 These are future questions, not assumptions:
 
-- Which Via attributions should be public?
 - Is content editing done directly in source, through a simple form, or through
   a lightweight content system?
 - Should friends eventually be able to suggest places?
@@ -219,6 +211,9 @@ These are future questions, not assumptions:
 - Removed Buffalo Exchange — Jamaica Plain because it closed.
 - Recorded, but did not publish, the unidentified Providence tunnel and
   circular garden.
+- Removed the Via field and attribution filter from the public model.
+- Renamed visit status to Been there?, with Done that. and Not yet. as its
+  values.
 
 ## Picking up the project
 

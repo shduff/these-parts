@@ -1,8 +1,7 @@
 # These Parts
 
-**These Parts** is a personal collection of places worth noticing close to
-home—found while wandering, recommended by friends, or waiting for another
-look.
+**These Parts** is a guide to getting lost without leaving these parts: other
+worlds, same bus line.
 
 The site includes a title-free collage landing page, a searchable and
 filterable index, and a shareable detail page for each place.
@@ -35,8 +34,7 @@ The production files are written to `dist/`. Pushing `main` runs
 ## Editing
 
 Places live in [`src/place-data.ts`](src/place-data.ts). Each place has a name,
-What, Where, Why, Been/Next status, optional Via attribution, slug, map link,
-and approved image.
+What, Where, Why, Done that/Not yet status, slug, map link, and approved image.
 
 Artwork lives in [`public/art/places`](public/art/places).
 
