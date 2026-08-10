@@ -68,6 +68,9 @@ Worcester arcade is titled Free Play — Worcester.
 - Add reliable coordinates to the location model.
 - Replace the current arbitrary three-item related list with the geographically
   nearest places.
+- When that replacement is complete, rename the related-place section to
+  **Elsewhere in the index, nearby on the map**. Do not publish that promise
+  while the recommendations are still arbitrary.
 - Decide whether related links should show approximate distance, neighborhood,
   or walking/transit context.
 - Use proximity more generally in browsing and filtering, while keeping the

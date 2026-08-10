@@ -234,7 +234,8 @@ function PlacePage({ place }: { place: Place }) {
 
         <header className="detail__heading">
           <p className="detail__number">
-            {place.beenThere}
+            <span>Been there?</span>
+            <strong>{place.beenThere}</strong>
           </p>
           <h1>{place.name}</h1>
         </header>
@@ -282,7 +283,7 @@ function PlacePage({ place }: { place: Place }) {
       </main>
       <footer className="site-footer">
         <p>These Parts</p>
-        <p>A personal index of nearby wonders.</p>
+        <p>When you want to go somewhere without going away.</p>
       </footer>
     </>
   );

@@ -475,6 +475,17 @@ h3 {
   color: var(--green);
 }
 
+.detail__number span,
+.detail__number strong {
+  display: block;
+}
+
+.detail__number strong {
+  margin-top: 0.45rem;
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+
 .detail__heading h1 {
   max-width: 12ch;
   color: var(--cobalt);

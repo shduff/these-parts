@@ -297,6 +297,8 @@ Be personal. Explain the attraction, memory, surprise, or desire.
 - The vermilion block sits evenly behind the image, reading as a centered
   paper border rather than a directional drop shadow.
 - Place name remains live text even though it appears in the artwork.
+- Visit status appears beside the title as a stacked `Been there?` label and
+  `Done that.` or `Not yet.` value.
 - What / Where / Why form the main rhythm.
 - Share action copies the unique URL.
 - Related-place links remain secondary.
