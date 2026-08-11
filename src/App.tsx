@@ -306,7 +306,7 @@ export default function App() {
   useEffect(() => {
     document.title = place
       ? `${place.name} — These Parts`
-      : "These Parts — Places worth noticing";
+      : "These Parts — A personal map of home";
   }, [place]);
 
   return place ? <PlacePage place={place} /> : <HomePage />;

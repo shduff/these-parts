@@ -52,6 +52,14 @@ Current supporting sentence:
 
 > A guide to getting lost without leaving these parts.
 
+Current browser/search title:
+
+> These Parts — A personal map of home
+
+Current search and link-preview description:
+
+> Exploring the nooks, crannies, and curious corners around home.
+
 “Here, actually” remains useful as an attitude or supporting phrase, not the
 primary brand name.
 
