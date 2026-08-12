@@ -54,14 +54,16 @@ Worcester arcade is titled Free Play — Worcester.
 
 ## Remaining questions
 
-1. Confirm the preferred Google Maps pin for McGrath Highway Overpass.
-2. Confirm the preferred pin or segment for Alewife Brook Path.
-3. Decide how Lehrhaus attribution should be phrased publicly.
-4. Identify the held Providence tunnel and circular garden.
-5. Decide whether future editing should stay in source or gain a simple
+1. **Tomorrow morning: recheck HTTPS for `parts.shaunalynn.org`.** It will have
+   had roughly 24 hours to provision. If GitHub still shows no certificate,
+   inspect conflicting CAA/AAAA records and remove/re-add the custom domain in
+   Pages settings to restart provisioning, then enable **Enforce HTTPS**.
+2. Confirm the preferred Google Maps pin for McGrath Highway Overpass.
+3. Confirm the preferred pin or segment for Alewife Brook Path.
+4. Decide how Lehrhaus attribution should be phrased publicly.
+5. Identify the held Providence tunnel and circular garden.
+6. Decide whether future editing should stay in source or gain a simple
    content form/CMS.
-6. Resolve the custom-domain HTTPS certificate mismatch if the site should use
-   HTTPS at `shaunalynn.org`.
 7. Replace the provisional Why copy on the 37 newly published entries in a
    deliberate entry-by-entry Why pass.
 8. Return to the 11-item Lore list in `CONTENT_REVIEW_ROUND_2.md` only after
