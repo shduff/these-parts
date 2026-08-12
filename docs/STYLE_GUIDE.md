@@ -116,8 +116,14 @@ All place artwork should look like physical cut construction paper:
 
 ### Complexity
 
-Aim for roughly 10–16 major shapes. Recognition should come from silhouette and
-one or two signature features, not exhaustive architectural detail.
+Aim for roughly 8–12 major shapes. Each object should usually be one broad,
+single-color scissor-cut silhouette or simple geometric plane. Recognition
+should come from silhouette and one or two signature features, not exhaustive
+architectural detail.
+
+Avoid tiny cutouts, modeled or embossed paper, facial features, food texture,
+clothing seams, drawn shading, and decorative internal marks. Visible fibers
+and restrained shadows at the edges of whole paper pieces are the only texture.
 
 ### Space
 
@@ -127,6 +133,10 @@ gesture is stronger than many tiny objects.
 ### Red thread
 
 A tactile vermilion thread passes through every place image.
+
+The thread must visibly enter and exit the canvas. It may travel beyond any
+contained medallion before crossing the outer frame, but it cannot exist only as
+a closed decorative loop inside the image.
 
 It may:
 
@@ -329,14 +339,18 @@ Be personal. Explain the attraction, memory, surprise, or desire.
 
 When adding a place:
 
-1. Research only enough real imagery to identify one or two signature shapes.
+1. Search for multiple real images of the exact place before prompting. Identify
+   its characteristic viewpoint, spatial arrangement, and one or two signature
+   shapes. Abstract those real traits rather than substituting a generic image
+   of the place category.
 2. Use one approved image as a complexity reference, not a rigid layout
    template.
 3. Choose contained medallion or open field based on the subject and the balance
    of the existing grid.
-4. Limit the major shapes.
+4. Limit the composition to roughly 8–12 broad, flat pieces with minimal or no
+   internal detail.
 5. Keep generous open space.
-6. Include the red thread.
+6. Include the red thread and make it visibly cross two outer canvas edges.
 7. Add the exact place title and no other text.
 8. Check spelling and visual consistency before adding the asset.
 

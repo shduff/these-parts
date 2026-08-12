@@ -1,10 +1,10 @@
 # These Parts — Current Status
 
-Last updated: August 10, 2026
+Last updated: August 12, 2026
 
 ## Where things stand
 
-**These Parts** is a working, public, static place guide with 27 entries. It has
+**These Parts** is a working, public, static place guide with 64 entries. It has
 a title-free collage landing page, searchable and filterable cards, and a
 shareable detail page for every place.
 
@@ -17,11 +17,12 @@ shareable detail page for every place.
 
 ## Current collection
 
-- **27 total places**
-- **21 Done that.**
-- **6 Not yet.**
-- **21 new images** added in the July 2026 expansion
-- **6 foundational images** retained exactly as the original visual references
+- **64 total places** (27 original + 37 newly published)
+- **52 Done that.**
+- **12 Not yet.**
+- Approved cut-paper artwork is now in `public/art/places/` for the full collection.
+- New entries have provisional Why copy so the cards and detail pages are usable;
+  replace those placeholders during the next Why pass.
 
 Alewife Extension and Alewife Brook Path are intentionally separate entries.
 Buffalo Exchange — Jamaica Plain is not included because it closed. The
@@ -49,6 +50,7 @@ Worcester arcade is titled Free Play — Worcester.
 - Expansion intake and held discoveries: `docs/NEW_PLACES.md`
 - Media plan: `docs/MEDIA_STORAGE.md`
 - Content-model proposal and entry-by-entry ledger: `docs/CONTENT_REVIEW.md`
+- Second expansion intake and Lore list: `docs/CONTENT_REVIEW_ROUND_2.md`
 
 ## Remaining questions
 
@@ -60,8 +62,18 @@ Worcester arcade is titled Free Play — Worcester.
    content form/CMS.
 6. Resolve the custom-domain HTTPS certificate mismatch if the site should use
    HTTPS at `shaunalynn.org`.
-7. Approve or revise the proposed entry structure before migrating the 27
-   records.
+7. Replace the provisional Why copy on the 37 newly published entries in a
+   deliberate entry-by-entry Why pass.
+8. Return to the 11-item Lore list in `CONTENT_REVIEW_ROUND_2.md` only after
+   the Why pass; clarify each item rather than guessing.
+9. Create an About page explaining who made These Parts, why it exists, and how
+   the collection grows. Explore **lore** there as the personal and social
+   connective tissue of the project, rather than adding it as a required field
+   to every place record.
+10. Reintroduce lightweight categories for browsing and filtering, based on the
+    original design vocabulary: food, shopping, quick stop, whole thing, and
+    other useful categories that emerge from the collection. Keep categories
+    editorial and permissive; do not force every place into a single box.
 
 ## Geographic proximity todo
 
@@ -90,6 +102,11 @@ Ask Codex:
 
 > Read `docs/CURRENT_STATUS.md`, `docs/PROJECT_JOURNAL.md`, and
 > `docs/STYLE_GUIDE.md`, then help me continue These Parts.
+
+Next recommended session: start the Why pass with Halibut Point, Purgatory Chasm,
+and Georges Island, then continue in order through the new entries. Keep the
+temporary sentence “A place I want to return to and write about properly.” only
+until each entry gets its real personal note.
 
 For a new place, provide: name, What, Why, Done that/Not yet, area,
 address/map link if known, and any image detail that makes the place

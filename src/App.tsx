@@ -245,6 +245,12 @@ function PlacePage({ place }: { place: Place }) {
             <p className="field-label">What</p>
             <p>{place.what}</p>
           </section>
+          {place.goodToKnow && (
+            <section>
+              <p className="field-label">Good to know</p>
+              <p>{place.goodToKnow}</p>
+            </section>
+          )}
           <section>
             <p className="field-label">Where</p>
             <p>

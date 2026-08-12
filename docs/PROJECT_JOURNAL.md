@@ -78,6 +78,19 @@ primary brand name.
 6. **Expandable without shoehorning.** The core content model stays small.
    Additional fields are not added until a real need appears.
 
+## Future About page and lore
+
+Add an About page that introduces Shauna by name and explains why she made
+These Parts: a personal map of home, a way to host friends, and a practice of
+noticing nearby places more closely.
+
+**Lore** is a promising name for the stories surrounding the collection: how a
+place was found, who passed it along, what happened there, and the private
+associations that turn geography into home. Treat lore as an editorial layer
+and a theme for the About page, not as another compulsory field in the place
+data model. Individual stories can still live in **Why** when they illuminate a
+specific place.
+
 ## Core taxonomy
 
 Every place uses the following structure:
@@ -197,6 +210,14 @@ These are future questions, not assumptions:
 
 ## Decision history
 
+### August 12, 2026 — second expansion published
+
+The 37 confirmed places from the second expansion are now live in the source
+data, with approved cut-paper artwork and provisional Why copy. The next
+content session is a collective Why pass, beginning with Halibut Point,
+Purgatory Chasm, and Georges Island. The held Lore list stays separate and is
+not to be filled by inference.
+
 - Chose a website over a native app to avoid app-store complexity and ongoing
   platform costs.
 - Chose GitHub Pages and deployed through an automated GitHub Actions workflow.
@@ -222,6 +243,10 @@ These are future questions, not assumptions:
 - Removed the Via field and attribution filter from the public model.
 - Renamed visit status to Been there?, with Done that. and Not yet. as its
   values.
+- Keep categories out of the first public model, but plan to reintroduce a
+  light editorial layer for browsing, with examples such as food, shopping,
+  quick stop, and whole thing. Categories should remain permissive rather than
+  forcing every place into one type.
 
 ## Picking up the project
 
