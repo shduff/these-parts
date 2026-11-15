@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Plan your day · These Parts</title>
+<style>
+:root{--cream:#f4eedf;--paper:#fffaf0;--blue:#123f9b;--ink:#17263b;--red:#ae3026;--line:#cdc5b3;--muted:#59594e;--green:#175740;--serif:"Bodoni 72",Didot,Georgia,serif}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.45 "Avenir Next",Avenir,"Segoe UI",sans-serif}button,input,select{font:inherit}button,select{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #a02c22;outline-offset:3px}button{color:inherit}button:disabled{opacity:.35;cursor:default}.wrap{width:min(1180px,calc(100% - 64px));margin:auto}.mast{border-bottom:1px solid var(--line)}.mast .wrap{height:64px;display:flex;align-items:center;justify-content:space-between}.brand{font:bold 27px var(--serif);color:var(--blue);text-decoration:none}.nav{display:flex;align-items:center;gap:24px;font-size:13px}.nav strong{color:var(--blue);border-bottom:2px solid var(--red);padding:4px 0}.nav a{text-decoration:none}.intro{display:flex;align-items:end;justify-content:space-between;gap:20px;padding:32px 0 27px}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:800;color:var(--red);margin:0 0 7px}.intro h1{font:normal clamp(48px,7vw,88px)/.95 var(--serif);letter-spacing:-.055em;color:var(--blue);margin:0}.intro p:last-child{margin:12px 0 0;color:var(--muted)}.modes>span{display:block;margin-bottom:6px;font-size:11px;font-weight:750}.seg{display:flex;gap:3px;border:1px solid var(--line);padding:3px;background:var(--paper)}.seg button{border:0;background:transparent;padding:8px 14px;white-space:nowrap}.seg [aria-pressed=true]{background:var(--blue);color:white}.grid{display:grid;grid-template-columns:1.14fr 1fr;gap:20px;align-items:stretch}.panel{border:1px solid var(--line);background:var(--paper);min-width:0}.day{padding:20px}.bar{display:flex;justify-content:space-between;align-items:start;gap:10px}.bar h2,.browse h2{font:normal 31px/1 var(--serif);letter-spacing:-.035em;margin:0;color:var(--blue)}.summary{font-size:12px;color:var(--muted);margin:6px 0 0}.subtle{border:0;background:none;text-decoration:underline;text-underline-offset:3px;padding:4px;color:var(--muted);font-size:12px}.list{list-style:none;margin:15px 0;padding:0}.stop{display:flex;gap:9px;align-items:center;border:1px solid var(--line);padding:7px 8px;background:#fffdf6;min-height:59px}.stop.over{outline:2px dashed var(--red);outline-offset:2px}.drag{cursor:grab;color:var(--muted);font-size:19px;user-select:none}.n{color:var(--red);font:italic 20px var(--serif);min-width:13px}.stop .info{flex:1;min-width:0}.stop strong,.card strong{font-size:14px;line-height:1.2;display:block}.area{display:block;font-size:11px;color:var(--muted);margin-top:3px}.stamp{width:44px;height:43px;flex:none;display:block}.actions{display:flex;gap:3px}.icon{width:27px;height:30px;border:1px solid transparent;background:transparent;padding:0}.icon:hover:not(:disabled){border-color:var(--line);background:var(--cream)}.leg{min-height:29px;display:flex;align-items:center;gap:9px;padding-left:30px;font-size:11px;color:var(--muted)}.leg:before{content:"";border-left:1px dashed var(--red);height:25px}.leg a{text-decoration:none}.leg a:hover{text-decoration:underline}.foot{display:flex;gap:8px;flex-wrap:wrap}.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:8px 11px;font-size:12px;font-weight:700;border:1px solid var(--blue)}.primary{background:var(--blue);color:white}.secondary{background:transparent;color:var(--blue)}.empty{padding:22px 12px;border:1px dashed var(--line);text-align:center;color:var(--muted)}.map{display:flex;flex-direction:column;position:relative;min-height:355px;background:#e9e6cc;overflow:hidden}.maphead{padding:13px 15px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:#eee9d4;border-bottom:1px solid var(--line);z-index:1}.maphead strong{font:normal 20px var(--serif);color:var(--blue)}.maphead span{font-size:10px;color:var(--muted)}.map svg{width:100%;min-height:245px;height:100%;flex:1;display:block}.mapfoot{background:#eee9d4;border-top:1px solid var(--line);padding:7px 12px;color:var(--muted);font-size:11px}.browse{padding:24px 0 34px}.btop{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:13px}.filters{display:flex;gap:7px;flex-wrap:wrap}.filters input,.filters select{background:var(--paper);border:1px solid var(--line);padding:7px 9px;color:var(--ink);font-size:12px;max-width:100%}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.card{background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;gap:9px;padding:9px;min-width:0}.card .info{flex:1;min-width:0}.plus{width:35px;height:35px;border:1px solid var(--blue);color:var(--blue);background:none;font-size:20px;padding:0;flex:none}.plus:hover{background:var(--blue);color:white}.hint{font-size:12px;color:var(--muted);margin:7px 0 0}.bottom{border-top:1px solid var(--line);padding:13px 0 20px;color:var(--muted);font-size:11px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}dialog{width:min(500px,calc(100% - 30px));background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:22px}dialog::backdrop{background:#17263b77}dialog h2{font:normal 28px var(--serif);margin:0;color:var(--blue)}dialog li{margin:7px 0}dialog menu{display:flex;gap:8px;padding:0;margin:15px 0 0}
+@media(max-width:830px){.wrap{width:calc(100% - 32px)}.grid{grid-template-columns:1fr}.map{min-height:265px}.map svg{height:240px;min-height:0}.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.mast .wrap{height:52px}.nav{gap:12px;font-size:11px}.brand{font-size:23px}.intro{align-items:start;flex-direction:column;padding:24px 0 18px}.day{padding:12px}.stop{gap:5px}.stop .stamp{width:34px;height:34px}.icon{width:28px;height:35px}.plus{width:40px;height:40px}.cards{grid-template-columns:1fr}.btop{align-items:start;flex-direction:column}.drag{display:none}.leg{padding-left:15px}}
+.slot{display:grid;--number-width:23px;--number-gap:9px;grid-template-columns:var(--number-width) minmax(0,1fr);column-gap:var(--number-gap);align-items:center;position:relative}.slot .n{text-align:center}.stop .drag{flex:none}.card[draggable=true]{cursor:grab}.card .drag{flex:none}.stop.is-dragging,.card.is-dragging{opacity:.46}.slot[data-insert]::after{content:"";height:3px;background:var(--red);position:absolute;left:calc(var(--number-width) + var(--number-gap));right:0;pointer-events:none;z-index:1}.slot[data-insert=before]::after{top:-3px}.slot[data-insert=after]::after{bottom:-3px}.empty[data-insert]{outline:2px dashed var(--red);outline-offset:2px}.drop-hint{margin:5px 0 0;font-size:11px;color:var(--muted)}@media(max-width:520px){.slot{--number-width:19px;--number-gap:7px}.drop-hint{display:none}}
+.leg{gap:6px;flex-wrap:wrap;padding-top:3px;padding-bottom:3px}.leg:before{height:26px}.leg-options,.leg-other{display:inline-flex;align-items:center;flex-wrap:wrap;gap:3px}.leg-mode{display:inline-flex;align-items:center;gap:3px;background:none;border:0;color:inherit;padding:2px 1px;white-space:nowrap;font-size:inherit;min-height:25px}.leg-mode:hover,.leg a:hover{text-decoration:underline;text-underline-offset:2px}.leg-mode[aria-pressed=true]{font-weight:800;color:var(--blue)}.leg-mode svg{width:13px;height:13px}.leg-map{font-weight:700;color:var(--blue);margin-left:3px}.leg-options{column-gap:8px}.leg-other{column-gap:7px}.route-note{flex-basis:100%;margin:0;color:var(--muted);font-size:11px}
+.more-places{margin-top:12px}
+[hidden]{display:none!important}
+</style></head>
+<body>
+<header class="mast"><div class="wrap"><a class="brand" href="../">These Parts</a><nav class="nav" aria-label="Main"><a href="../">Explore</a><strong aria-current="page">Plan your day</strong></nav></div></header>
+<main class="wrap"><section class="intro"><div><p class="eyebrow">These Parts / A day out</p><h1>Plan your day.</h1><p>Pick a few places. See how the day fits together.</p></div><div class="modes"><span id="mode-label">Default travel mode</span><div class="seg" role="group" aria-labelledby="mode-label" id="modes"><button data-mode="walking">Walk</button><button data-mode="transit">Transit</button><button data-mode="driving">Drive</button></div></div></section>
+<div class="grid">
+<section class="panel day" aria-labelledby="day-title"><div class="bar"><div><p class="eyebrow">The itinerary</p><h2 id="day-title">Your stops</h2><p class="summary" id="summary"></p><p class="drop-hint">Drag stops to reorder, or drop a nearby place here.</p></div><button class="subtle" id="reset" type="button">Clear stops</button></div><ol id="stops" class="list" aria-label="Stops in order"></ol><div class="foot" id="route-actions"></div></section>
+<section class="panel map" aria-label="Route sketch"><div class="maphead"><strong>Along the way</strong><span>Route sketch · not for navigation</span></div><svg id="map" viewBox="0 0 500 320" role="img" aria-label="Schematic showing the stops in order"></svg><div class="mapfoot" id="mapfoot"></div></section>
+</div>
+<section class="browse" aria-labelledby="browse-title"><div class="btop"><div><p class="eyebrow">Find another stop</p><h2 id="browse-title">What’s nearby?</h2><p class="hint" id="near"></p></div><div class="filters"><input id="search" type="search" placeholder="Find a place" aria-label="Find a place"><select id="sort" aria-label="Sort places"><option value="time">Travel time</option><option value="distance">Distance</option><option value="name">Name</option></select></div></div><div class="cards" id="choices"></div><button class="secondary more-places" type="button" id="show-more" aria-controls="choices" hidden>Show more</button></section>
+</main><footer class="bottom"><div class="wrap">Planner preview · Sample places and illustrative travel estimates. Your draft stays in this browser.</div></footer>
+<div class="sr" id="status" role="status" aria-live="polite"></div>
+<dialog id="share" aria-labelledby="share-title"><h2 id="share-title">Take the plan with you</h2><p id="share-note"></p><div id="share-links"></div><menu><button type="button" id="copy" class="primary">Copy itinerary</button><button type="button" id="close" class="secondary">Close</button></menu><p id="copy-status" role="status"></p></dialog>
+<script>
+'use strict';
+const places=[
+ ['round','The Round House','Spring Hill · Somerville',42.3882,-71.1075,'36 Atherton Street, Somerville, MA','house',0],
+ ['leathers','Ed Leathers Community Park','Gilman Square · Somerville',42.3877,-71.0926,'Edward L. Leathers Community Park, Somerville, MA','park',1],
+ ['torbert','Torbert Macdonald Park','Mystic River · Medford',42.4030,-71.0890,'Torbert Macdonald State Park, Medford, MA','tower',2],
+ ['overpass','McGrath Highway Overpass','East Somerville',42.3882,-71.08965,'42.388199837238005,-71.08965205338477','bridge',3],
+ ['skinny','The Skinny House','North End · Boston',42.3666,-71.0559,'44 Hull Street, Boston, MA','house',4],
+ ['longwood','Longwood Mall','Longwood · Brookline',42.3454,-71.1119,'Longwood Mall, Brookline, MA','park',2],
+ ['alewife','Alewife Brook Greenway','Cambridge / Somerville',42.3985,-71.1438,'Alewife Brook Greenway, Cambridge, MA','park',0],
+ ['chapel','MIT Chapel','Cambridge',42.3580,-71.0955,'MIT Chapel, Cambridge, MA','tower',1],
+ ['piers','Piers Park','East Boston',42.3631,-71.0373,'Piers Park, East Boston, MA','bridge',4]
+].map(([id,name,area,lat,lon,dest,kind,tone])=>({id,name,area,lat,lon,dest,kind,tone}));
+const lookup=Object.fromEntries(places.map(p=>[p.id,p]));
+const labels={walking:'Walk',transit:'Transit',driving:'Drive'};
+const choicePageSize=4;
+let choiceLimit=choicePageSize;
+let mode='walking', order=['round','leathers','torbert'], dragged=null;
+const overrides=Object.create(null);
+const legKey=(a,b)=>a+'-'+b;
+const legMode=(a,b)=>overrides[legKey(a,b)]??mode;
+const legs=()=>order.slice(1).map((b,i)=>({a:order[i],b,m:legMode(order[i],b)}));
+function defaultRouteMode(){return order.length>1&&(order.length===2||(order.length<=5&&mode!=='transit'))?mode:null;}
+function fullRouteMode(){const list=legs(), m=list[0]?.m;return order.length<=5&&m&&m!=='transit'&&list.every(l=>l.m===m)?m:null;}
+const modeIcons={
+ walking:'<circle cx="13" cy="4" r="2"/><path d="m5 12 4-3 4 1 3 4h4M12 10l-2 6 4 2 2 4M10 16l-3 6"/>',
+ transit:'<rect x="5" y="3" width="14" height="15" rx="3"/><path d="M5 11h14M8 18l-2 4m10-4 2 4M9 14h.01M15 14h.01"/>',
+ driving:'<path d="m5 11 2-6h10l2 6M5 11h14l2 3v4H3v-4zM5 18v3m14-3v3M7 14h.01M17 14h.01"/>'
+};
+function modeIcon(m){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+modeIcons[m]+'</svg>';}
+
+try{const saved=JSON.parse(localStorage.getItem('these-parts-day-v1'));if(saved&&Array.isArray(saved.order)){order=[...new Set(saved.order.filter(id=>Object.hasOwn(lookup,id)))];if(Object.hasOwn(labels,saved.mode))mode=saved.mode;for(const [key,value] of Object.entries(saved.overrides??{}))if(Object.hasOwn(labels,value))overrides[key]=value;}}catch{}
+const $=id=>document.getElementById(id);
+const fmt=n=>n>=60?Math.floor(n/60)+' hr'+(n%60?' '+n%60+' min':''):n+' min';
+function distance(a,b){const rad=Math.PI/180;const t=Math.sin((b.lat-a.lat)*rad/2)**2+Math.cos(a.lat*rad)*Math.cos(b.lat*rad)*Math.sin((b.lon-a.lon)*rad/2)**2;return 3959*2*Math.asin(Math.sqrt(t));}
+function minutes(a,b,m=mode){const d=distance(a,b);const river=(a.lat<42.37)!==(b.lat<42.37);const n=m==='walking'?d*25+(river?5:0):m==='driving'?5+d*4+(river?4:0):Math.min(d*25+(river?5:0),11+d*6+(river?4:0)+Math.round(Math.abs(a.lon-b.lon)*85));return Math.max(2,Math.round(n));}
+function route(ids,m=mode){const p=ids.map(id=>lookup[id]);const q=new URLSearchParams({api:'1',origin:p[0].dest,destination:p.at(-1).dest,travelmode:m});if(p.length>2)q.set('waypoints',p.slice(1,-1).map(x=>x.dest).join('|'));return 'https://www.google.com/maps/dir/?'+q;}
+const tones=['#dfab41','#b9acd3','#a7b7a1','#e4a99a','#aebfda'];
+const shapes={house:'<path d="M8 22L23 10l15 12v17H8z" fill="#fff4d7"/><path d="M9 23L23 12l14 11M16 39V27h6v12M27 26h6v7h-6z" fill="none" stroke="#123f9b" stroke-width="2"/>',park:'<path d="M7 37Q23 29 39 37v5H7z" fill="#fff4d7"/><path d="M23 39V19m0 9-7-5m7 1 8-6" stroke="#175740" stroke-width="2"/><path d="M9 21Q7 13 17 13q3-9 11-4 8 0 9 7 4 9-9 11-11 4-19-6z" fill="#175740" opacity=".8"/>',tower:'<path d="M12 17l11-7 12 7v10H12z" fill="#fff4d7"/><path d="M15 26l-4 15m19-15 5 15M14 30l18 9m-2-9-17 9m6-21v6m8-6v6" stroke="#123f9b" stroke-width="2"/>',bridge:'<path d="M5 27h37M7 27l6-11 9 11 8-11 9 11M12 27v9m24-9v9" stroke="#123f9b" stroke-width="2" fill="none"/><path d="M5 39q5-3 10 0t10 0 10 0 8 0" stroke="#fff4d7" stroke-width="2" fill="none"/>'};
+function stamp(p){return '<svg class="stamp" viewBox="0 0 46 46" aria-hidden="true"><rect width="46" height="46" fill="'+tones[p.tone]+'"/><circle cx="34" cy="12" r="7" fill="#fff4d7" opacity=".65"/>'+shapes[p.kind]+'</svg>';}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+function move(id,to){const from=order.indexOf(id);if(from<0||to<0||to>=order.length||from===to)return;order.splice(from,1);order.splice(to,0,id);render();announce(lookup[id].name+' moved to stop '+(to+1)+'.');}
+function announce(s){$('status').textContent=s;}
+function renderMap(){
+ const project=p=>[35+(p.lon+71.15)*3950,38+(42.412-p.lat)*3330];
+ const pts=order.map(id=>project(lookup[id]));
+ const line=pts.map(p=>p.join(',')).join(' ');
+ const roads=Array.from({length:11},(_,i)=>'<path d="M'+(i*53-50)+' 0q-30 100 52 188l42 132"/>').join('')+Array.from({length:7},(_,i)=>'<path d="M0 '+(i*54-13)+'Q240 '+(i*54-63)+' 500 '+(i*54+6)+'"/>').join('');
+ $('map').innerHTML='<rect width="500" height="320" fill="#e8e4ca"/><g stroke="#faf7e9" fill="none" stroke-width="2" opacity=".9">'+roads+'</g><g fill="#c2cbae" opacity=".9"><path d="M38 37l38-9 35 26-12 36-48 3z"/><path d="M229 49l62-15 35 29-12 23-67 3z"/><path d="M33 222l63-17 34 21-11 54-69-9z"/></g><path d="M-20 242Q65 219 116 231T211 258Q246 271 273 244T340 189Q390 157 425 163T520 123" stroke="#a3bcc3" stroke-width="20" fill="none"/><path d="M170 21Q173 64 235 77T333 79Q362 80 381 119T434 161" stroke="#a3bcc3" stroke-width="12" fill="none"/><g fill="#646750" font-family="Georgia" font-style="italic" font-size="13"><text x="72" y="117">Somerville</text><text x="229" y="23">Medford</text><text x="163" y="216">Cambridge</text><text x="358" y="241">Boston</text><text x="126" y="255" transform="rotate(12 126 255)">Charles River</text></g><polyline points="'+line+'" fill="none" stroke="#ad3228" stroke-width="3" stroke-dasharray="5 4" stroke-linejoin="round"/>'+pts.map(([x,y],i)=>'<g transform="translate('+x+','+y+')"><circle r="13" fill="#123f9b" stroke="#fffaf0" stroke-width="2"/><text fill="white" text-anchor="middle" dominant-baseline="central" font-family="sans-serif" font-size="12" font-weight="bold">'+(i+1)+'</text></g>').join('');
+ $('mapfoot').textContent=order.length?order.map(id=>lookup[id].name).join(' → '):'Add a stop to see it on the sketch.';
+}
+function renderChoices(){
+ const last=lookup[order.at(-1)], q=$('search').value.trim().toLowerCase(), sort=$('sort').value;
+ $('near').textContent=last?'From your last stop: '+last.name+'.':'Pick any place to start.';
+ const items=places.filter(p=>!order.includes(p.id)&&(p.name+' '+p.area).toLowerCase().includes(q));
+ items.sort((a,b)=>!last||sort==='name'?a.name.localeCompare(b.name):sort==='distance'?distance(last,a)-distance(last,b):minutes(last,a)-minutes(last,b)||distance(last,a)-distance(last,b));
+ $('show-more').hidden=items.length<=choiceLimit;
+ $('choices').innerHTML=items.slice(0,choiceLimit).map(p=>'<article class="card" draggable="true" data-place="'+p.id+'"><span class="drag" aria-hidden="true">⠿</span>'+stamp(p)+'<div class="info"><strong>'+p.name+'</strong><span class="area">'+p.area+(last?' · '+(sort==='distance'?distance(last,p).toFixed(1)+' mi straight-line':'~'+fmt(minutes(last,p)))+(mode!=='walking'&&minutes(last,p,'walking')<=12?' · Walk ~'+fmt(minutes(last,p,'walking')):''):'')+'</span></div><button class="plus" data-add="'+p.id+'" aria-label="Add '+esc(p.name)+'">+</button></article>').join('')||'<p class="hint">'+(q?'No places match your search.':'All sample places are in your plan.')+'</p>';
+}
+function render(){
+ try{localStorage.setItem('these-parts-day-v1',JSON.stringify({order,mode,overrides}));}catch{}
+ $('modes').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
+ const total=legs().reduce((sum,{a,b,m})=>sum+minutes(lookup[a],lookup[b],m),0), full=defaultRouteMode(), mapsNote=' aria-describedby="default-maps-note"';
+ $('summary').textContent=order.length+' '+(order.length===1?'stop':'stops')+(order.length>1?' · ~'+fmt(total)+' between stops':'');
+ $('reset').disabled=!order.length;
+ $('stops').innerHTML=order.map((id,i)=>{const p=lookup[id];return '<li>'+ (i?renderLeg(order[i-1],id):'')+'<div class="slot" data-slot="'+i+'"><span class="n" aria-hidden="true">'+(i+1)+'</span><div class="stop" data-stop="'+id+'" draggable="true"><span class="drag" aria-hidden="true">⠿</span>'+stamp(p)+'<div class="info"><strong>'+p.name+'</strong><span class="area">'+p.area+'</span></div><div class="actions"><button class="icon" data-action="up" aria-label="Move '+esc(p.name)+' up" '+(!i?'disabled':'')+'>↑</button><button class="icon" data-action="down" aria-label="Move '+esc(p.name)+' down" '+(i===order.length-1?'disabled':'')+'>↓</button><button class="icon" data-action="remove" aria-label="Remove '+esc(p.name)+'">×</button></div></div></div></li>';}).join('')||'<li class="empty">Nothing planned yet. Add a place below to get started.</li>';
+ $('route-actions').innerHTML=order.length?'<button id="share-button" class="primary" type="button">Share itinerary</button>'+(full?'<a class="secondary" target="_blank" rel="noopener noreferrer" href="'+esc(route(order,full))+'"'+mapsNote+'>Open route in Google Maps ↗</a>':order.length>1?'<button id="legs-button" class="secondary" type="button"'+mapsNote+'>Google Maps directions</button>':''):'<button id="sample" class="secondary" type="button">Load a sample day</button>';
+ $('route-actions').insertAdjacentHTML('beforeend','<p class="route-note" id="default-maps-note">Google Maps directions use your default mode ('+labels[mode]+') for every leg. Use the Maps link next to each leg for its selected mode.</p>');
+ renderChoices();renderMap();
+}
+function renderLeg(a,b){
+ const m=legMode(a,b), key=legKey(a,b), destination=esc(lookup[b].name);
+ const option=k=>'<button type="button" class="leg-mode" data-leg-mode="'+k+'" aria-pressed="'+(k===m)+'" aria-label="'+labels[k]+' about '+fmt(minutes(lookup[a],lookup[b],k))+' to '+destination+'">'+modeIcon(k)+labels[k]+' ~'+fmt(minutes(lookup[a],lookup[b],k))+'</button>';
+ return '<div class="leg" data-leg="'+key+'" role="group" aria-label="Travel to '+destination+'"><span class="leg-options">'+option(m)+'<span class="leg-other">'+Object.keys(labels).filter(k=>k!==m).map(option).join('')+'</span></span><a class="leg-map" href="'+esc(route([a,b],m))+'" target="_blank" rel="noopener noreferrer" aria-label="Google Maps directions to '+destination+'">Maps ↗</a>'+'</div>';
+}
+function openShare(){
+ $('share-title').textContent='Take the plan with you';
+ $('copy').hidden=false;
+ const full=fullRouteMode();
+ $('share-note').textContent=order.length<2?'Copy your stop to share it.':full?'Copy the itinerary and a Google Maps route.':'Copy the itinerary with directions for each leg.';
+ $('share-links').innerHTML=full?'<a class="secondary" href="'+esc(route(order,full))+'" target="_blank" rel="noopener noreferrer">Open full route ↗</a>':order.length>1?'<ol>'+legs().map(({a,b,m})=>'<li><a href="'+esc(route([a,b],m))+'" target="_blank" rel="noopener noreferrer">'+lookup[a].name+' → '+lookup[b].name+'</a> · '+labels[m]+' ~'+fmt(minutes(lookup[a],lookup[b],m))+'</li>').join('')+'</ol>':'';
+ $('copy-status').textContent='';$('share').showModal();
+}
+$('stops').addEventListener('click',e=>{
+ const button=e.target.closest('[data-leg-mode]');
+ if(!button)return;
+ const key=button.closest('[data-leg]').dataset.leg;
+ if(button.dataset.legMode===mode)delete overrides[key];
+ else if(button.getAttribute('aria-pressed')==='true')return;
+ else overrides[key]=button.dataset.legMode;
+ render();
+ $('stops').querySelector('[data-leg="'+key+'"] [aria-pressed=true]').focus();
+ announce((overrides[key]?'Leg set to ':'Leg using default: ')+labels[overrides[key]??mode]+'.');
+});
+$('modes').addEventListener('click',e=>{const b=e.target.closest('[data-mode]');if(b){mode=b.dataset.mode;render();announce(labels[mode]+' estimates updated.');}});
+$('choices').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;const id=b.dataset.add;if(!order.includes(id))order.push(id);render();announce(lookup[id].name+' added.');($('choices').querySelector('button')||$('share-button'))?.focus();});
+$('stops').addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;const id=b.closest('[data-stop]').dataset.stop,i=order.indexOf(id);if(b.dataset.action==='remove'){order.splice(i,1);render();announce(lookup[id].name+' removed.');($('stops').querySelectorAll('.stop')[Math.min(i,order.length-1)]?.querySelector('[data-action=remove]')||$('search')).focus();}else{move(id,i+(b.dataset.action==='up'?-1:1));const row=$('stops').querySelector('[data-stop="'+id+'"]');(row.querySelector('[data-action="'+b.dataset.action+'"]:not(:disabled)')||row.querySelector('[data-action=remove]')).focus();}});
+function clearDropMarks(){ $('stops').querySelectorAll('[data-insert]').forEach(el=>delete el.dataset.insert); }
+function finishDrag(){
+ dragged=null;
+ clearDropMarks();
+ document.querySelectorAll('.is-dragging').forEach(el=>el.classList.remove('is-dragging'));
+}
+function getDropSlot(e){
+ const rows=[...$('stops').querySelectorAll('.slot')];
+ const i=rows.findIndex(row=>{const r=row.getBoundingClientRect();return e.clientY<r.top+r.height/2;});
+ return i===-1?rows.length:i;
+}
+function dropTarget(e){
+ const from=order.indexOf(dragged.id), slot=getDropSlot(e);
+ return {from,slot,to:slot-(from>=0&&from<slot?1:0)};
+}
+function startDrag(e){
+ const card=e.target.closest('[data-stop],[data-place]');
+ if(!card||e.target.closest('button,a')){e.preventDefault();return;}
+ const id=card.dataset.stop||card.dataset.place;
+ dragged={id,card};
+ e.dataTransfer.effectAllowed='move';
+ e.dataTransfer.setData('text/plain',id);
+ requestAnimationFrame(()=>{if(dragged?.card===card)card.classList.add('is-dragging');});
+}
+$('stops').addEventListener('dragstart',startDrag);
+$('choices').addEventListener('dragstart',startDrag);
+document.addEventListener('dragend',finishDrag);
+$('stops').addEventListener('dragover',e=>{
+ if(!dragged)return;
+ clearDropMarks();
+ const {slot}=dropTarget(e);
+ e.preventDefault();
+ e.dataTransfer.dropEffect='move';
+ const rows=$('stops').querySelectorAll('.slot');
+ if(!rows.length){$('stops').querySelector('.empty').dataset.insert='before';return;}
+ const hovered=e.target.closest('.slot');
+ if(hovered)hovered.dataset.insert=slot>Number(hovered.dataset.slot)?'after':'before';
+ else if(slot===rows.length)rows[slot-1].dataset.insert='after';
+ else rows[slot].dataset.insert='before';
+});
+$('stops').addEventListener('dragleave',e=>{
+ if(!e.relatedTarget||!$('stops').contains(e.relatedTarget))clearDropMarks();
+});
+$('stops').addEventListener('drop',e=>{
+ if(!dragged)return;
+ e.preventDefault();
+ const {id}=dragged, {from,to}=dropTarget(e);
+ finishDrag();
+ if(from===to)return;
+ if(from<0){
+  order.splice(to,0,id);
+  render();
+  announce(lookup[id].name+' added as stop '+(to+1)+'.');
+ }else{
+  move(id,to);
+ }
+});
+$('search').addEventListener('input',()=>{choiceLimit=choicePageSize;renderChoices();});
+$('sort').addEventListener('change',renderChoices);
+$('show-more').onclick=()=>{
+ const firstNew=choiceLimit;
+ choiceLimit+=choicePageSize;
+ renderChoices();
+ const next=$('choices').querySelectorAll('[data-add]')[firstNew];
+ if(next)next.focus();
+};
+$('reset').onclick=()=>{order=[];for(const key of Object.keys(overrides))delete overrides[key];render();announce('Stops cleared.');$('sample').focus();};
+$('route-actions').onclick=e=>{if(e.target.id==='sample'){order=['round','leathers','torbert'];render();announce('Sample day loaded.');$('share-button').focus();}if(e.target.id==='share-button')openShare();if(e.target.id==='legs-button')openDefaultDirections();};
+function openDefaultDirections(){
+ $('share-title').textContent='Google Maps directions';
+ $('share-note').textContent='Directions for each leg using your default mode ('+labels[mode]+').';
+ $('share-links').innerHTML='<ol>'+legs().map(({a,b})=>'<li><a href="'+esc(route([a,b],mode))+'" target="_blank" rel="noopener noreferrer">'+lookup[a].name+' → '+lookup[b].name+'</a></li>').join('')+'</ol>';
+ $('copy').hidden=true;
+ $('copy-status').textContent='';
+ $('share').showModal();
+}
+$('close').onclick=()=>$('share').close();
+$('copy').onclick=async()=>{const full=fullRouteMode();const lines=['These Parts · Day plan',...order.flatMap((id,i)=>{if(!i)return ['1. '+lookup[id].name];const a=order[i-1],m=legMode(a,id);return ['   '+labels[m]+' ~'+fmt(minutes(lookup[a],lookup[id],m))+(full?'':' · '+route([a,id],m)),(i+1)+'. '+lookup[id].name];}),...(full?[route(order,full)]:[])];const value=lines.join('\n');try{await navigator.clipboard.writeText(value);$('copy-status').textContent='Copied.';}catch{const field=document.createElement('textarea');field.value=value;field.setAttribute('aria-label','Itinerary to copy');field.rows=6;field.style.width='100%';$('copy-status').replaceChildren(field);field.select();}};
+render();
+</script></body></html>

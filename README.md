@@ -33,6 +33,13 @@ The production files are written to `dist/`. Pushing `main` runs
 
 ## Editing
 
+The **Plan your day** preview is in `public/plan/index.html`, linked from the
+site header. It uses nine sample places, illustrative travel estimates, and a
+schematic map; it is not live routing. It supports ordered stops, per-leg travel
+choices, nearby suggestions, and Google Maps links. Drafts stay in the visitor's
+browser. Keep the preview and estimate labels visible until real routing and
+the full collection are connected.
+
 Places live in [`src/place-data.ts`](src/place-data.ts). Each place has a name,
 What, Where, Why, Done that/Not yet status, slug, map link, and approved image.
 

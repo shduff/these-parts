@@ -14,9 +14,12 @@ function SiteHeader() {
       <a className="wordmark" href="#/" aria-label="These Parts home">
         These Parts
       </a>
-      <a className="index-link" href="#places">
-        Index <span aria-hidden="true">↓</span>
-      </a>
+      <nav className="site-nav" aria-label="Main">
+        <a className="index-link" href="./plan/index.html">Plan your day</a>
+        <a className="index-link" href="#places">
+          Index <span aria-hidden="true">↓</span>
+        </a>
+      </nav>
     </header>
   );
 }

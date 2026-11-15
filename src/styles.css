@@ -81,6 +81,12 @@ img {
   text-decoration: none;
 }
 
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 3vw, 1.5rem);
+}
+
 .index-link {
   font-size: 0.72rem;
   font-weight: 700;
