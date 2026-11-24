@@ -1,7 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { places, type BeenThere, type Place } from "./place-data";
+import { places, type Place } from "./place-data";
 
-const ALL = "All";
+const colors = ["#CE9757","#B77570","#829B79","#8C8DAE","#C8B965","#729C9E"];
+function paper(place: Place) { return colors[places.indexOf(place) % colors.length] || colors[0]; }
+function normalize(s: string) { return s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase(); }
+function close(a: string,b: string) { if(a===b || b.includes(a)) return true; if(a.length<4) return false; let row=Array.from({length:b.length+1},(_,i)=>i); for(let i=1;i<=a.length;i++){let next=[i]; for(let j=1;j<=b.length;j++) next[j]=Math.min(next[j-1]+1,row[j]+1,row[j-1]+(a[i-1]===b[j-1]?0:1)); row=next;} return row[b.length]<= (a.length>7?2:1); }
+function Photo({place}: {place: Place}) { return <div className="photo-paper" style={{backgroundColor:paper(place)}} aria-label={place.name} />; }
 
 function getSlugFromHash() {
   const match = window.location.hash.match(/^#\/place\/([^/]+)$/);
@@ -29,12 +33,7 @@ function PlaceCard({ place, index }: { place: Place; index: number }) {
     <article className="place-card">
       <a className="place-card__link" href={`#/place/${place.slug}`}>
         <div className="place-card__image">
-          <img
-            src={place.image}
-            alt={`Cut-paper portrait of ${place.name}`}
-            loading={index < 2 ? "eager" : "lazy"}
-            decoding="async"
-          />
+          <Photo place={place} />
         </div>
         <div className="place-card__content">
           <div className="place-card__meta">
@@ -57,55 +56,15 @@ function PlaceCard({ place, index }: { place: Place; index: number }) {
 
 function HomePage() {
   const [query, setQuery] = useState("");
-  const [area, setArea] = useState(ALL);
-  const [beenThere, setBeenThere] = useState<BeenThere | null>(null);
-
-  const areas = useMemo(
-    () => [ALL, ...Array.from(new Set(places.map((place) => place.area)))],
-    [],
-  );
-  const visiblePlaces = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-
-    return places.filter((place) => {
-      const matchesSearch =
-        !normalized ||
-        [
-          place.name,
-          place.what,
-          place.why,
-          place.area,
-          place.address,
-        ].some((value) => value.toLowerCase().includes(normalized));
-
-      return (
-        matchesSearch &&
-        (area === ALL || place.area === area) &&
-        (beenThere === null || place.beenThere === beenThere)
-      );
-    });
-  }, [area, beenThere, query]);
-
-  const hasFilters = query !== "" || area !== ALL || beenThere !== null;
-
-  function clearFilters() {
-    setQuery("");
-    setArea(ALL);
-    setBeenThere(null);
-  }
+  const visiblePlaces = useMemo(() => { const terms=normalize(query).trim().split(/\s+/).filter(Boolean); return places.filter(place=>{const words=normalize([place.name,place.what,place.why,place.area,place.address,place.goodToKnow||"",place.beenThere].join(" ")).split(/[^a-z0-9]+/); return terms.every(term=>words.some(word=>close(term,word)));}); },[query]);
+  function clearFilters(){setQuery("");}
 
   return (
     <>
       <SiteHeader />
       <main>
         <section className="hero">
-          <img
-            className="hero__art"
-            src="./art/these-parts-hero.png"
-            alt=""
-            aria-hidden="true"
-            fetchPriority="high"
-          />
+          <div className="hero-collage">{places.slice(0,4).map(place=><a key={place.slug} href={`#/place/${place.slug}`} aria-label={place.name}><Photo place={place}/></a>)}</div>
           <div className="hero__title">
             <p className="kicker">Other worlds, same bus line</p>
             <h1>
@@ -117,22 +76,10 @@ function HomePage() {
               A guide to getting lost without leaving these parts.
             </p>
           </div>
-          <a className="hero__jump" href="#places">
-            Look around <span aria-hidden="true">↓</span>
-          </a>
+          
         </section>
 
-        <section className="index" id="places" aria-labelledby="places-heading">
-          <div className="index-heading">
-            <div>
-              <p className="kicker">The index</p>
-              <h2 id="places-heading">Where to next?</h2>
-            </div>
-            <p className="count" aria-live="polite">
-              {visiblePlaces.length} of {places.length}
-            </p>
-          </div>
-
+        <section className="index" id="places" aria-label="Index">
           <div className="filters" aria-label="Find and filter places">
             <label className="search">
               <span>Find</span>
@@ -143,43 +90,7 @@ function HomePage() {
                 placeholder="Search these parts"
               />
             </label>
-            <label>
-              <span>Area</span>
-              <select
-                value={area}
-                onChange={(event) => setArea(event.target.value)}
-              >
-                {areas.map((option) => (
-                  <option key={option} value={option}>
-                    {option === ALL ? "Everywhere" : option}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <fieldset className="been-there-filter">
-              <legend>Been there?</legend>
-              <div>
-                {(["Done that.", "Not yet."] as BeenThere[]).map((option) => (
-                  <button
-                    key={option}
-                    type="button"
-                    aria-pressed={beenThere === option}
-                    onClick={() =>
-                      setBeenThere((current) =>
-                        current === option ? null : option,
-                      )
-                    }
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </fieldset>
-            {hasFilters && (
-              <button type="button" className="clear" onClick={clearFilters}>
-                Clear
-              </button>
-            )}
+            
           </div>
 
           {visiblePlaces.length ? (
@@ -231,9 +142,7 @@ function PlacePage({ place }: { place: Place }) {
           </button>
         </div>
 
-        <figure className="detail__art">
-          <img src={place.image} alt={`Cut-paper portrait of ${place.name}`} />
-        </figure>
+
 
         <header className="detail__heading">
           <p className="detail__number">
@@ -243,17 +152,12 @@ function PlacePage({ place }: { place: Place }) {
           <h1>{place.name}</h1>
         </header>
 
-        <div className="detail__fields">
+        <div className="detail__fields"><div className="detail-practical">
           <section>
             <p className="field-label">What</p>
             <p>{place.what}</p>
           </section>
-          {place.goodToKnow && (
-            <section>
-              <p className="field-label">Good to know</p>
-              <p>{place.goodToKnow}</p>
-            </section>
-          )}
+
           <section>
             <p className="field-label">Where</p>
             <p>
@@ -270,7 +174,14 @@ function PlacePage({ place }: { place: Place }) {
               Open the map ↗
             </a>
           </section>
-          <section>
+          {place.goodToKnow && (
+            <section>
+              <p className="field-label">Good to know</p>
+              <p>{place.goodToKnow}</p>
+            </section>
+          )}
+          </div><figure className="detail__art"><Photo place={place}/></figure>
+          <section className="detail-why">
             <p className="field-label">Why</p>
             <p>{place.why}</p>
           </section>
